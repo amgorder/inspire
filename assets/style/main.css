@@ -12,6 +12,8 @@
   border: 2px solid black;
   margin: 20px;
   padding: 20px;
+  box-shadow: #004d00;
+  border-radius: 2%;
 }
 
 

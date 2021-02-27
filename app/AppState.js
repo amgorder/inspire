@@ -2,20 +2,19 @@ import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 import Weather from "./Models/Weather.js"
 import Quote from "./Models/Quote.js"
+import TodoList from "./Models/TodoList.js"
 
 
 
 class AppState extends EventEmitter {
-
-
   backgroundImages = ""
-  /** @type {Weather} */
+
+  /** @type {TodoList[]} */
+  todoList = []
+
   weather = null
-  /** @type {Quote} */
   quote = null
   clock = ""
-
-
 }
 
 export const ProxyState = new Proxy(new AppState(), {
