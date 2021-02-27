@@ -20,7 +20,7 @@
             <div id="clock" class="col clock">
 
             </div>
-            <div id="current-weather" class="col clock">
+            <div id="current-weather" class="col clock highlight">
 
             </div>
             <div id="quote" class="col clock">
@@ -29,11 +29,19 @@
         </div>
 
         <div class="row">
-            <div id="tasks" class="col">
+            <div id="tasks" class="col clock">
 
+                <h1>Need to do something?</h1>
+                <form class="form-inline" onsubmit="app.todoListController.createTodo(event)">
+                    <div class="form-group">
+                        <input type="text" name="task" id="task" class="form-control" placeholder="Todo"
+                            aria-describedby="helpId">
+                    </div>
+                    <button class="btn btn-info" type="submit">Ship it!</button>
+                    <div class="" id=""></div>
+                </form>
             </div>
         </div>
-
 
 
 
