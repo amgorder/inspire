@@ -5,6 +5,7 @@ import { weatherService } from "../Services/WeatherService.js";
 //Private
 function _drawWeather() {
     document.getElementById("current-weather").innerHTML = ProxyState.weather.Template
+
 }
 
 //Public

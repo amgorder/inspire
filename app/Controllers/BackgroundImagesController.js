@@ -1,7 +1,6 @@
 import { ProxyState } from "../AppState.js";
 import { backgroundImagesService } from "../Services/BackgroundImagesService.js";
 
-
 //Private
 function _drawBackgroundImage() {
   document.body.style.backgroundImage = `url('${ProxyState.backgroundImages}')`

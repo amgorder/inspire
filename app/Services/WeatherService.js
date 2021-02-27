@@ -10,17 +10,20 @@ class WeatherService {
   }
 
 
+
   async getWeather() {
     try {
       const res = await sandboxApi.get("weather")
       ProxyState.weather = new Weather(res.data)
-
-      console.log(ProxyState.weather);
     } catch (error) {
-      console.error('getWeather Error retriving images');
+      console.error('getWeather Error retriving weather');
     }
   }
 
+  fahrenheit() {
+    let fahrenheit = (((ProxyState.weather.temp - 273.15) * 1.8) + 32);
+    console.log(fahrenheit);
+  }
 }
 
 export const weatherService = new WeatherService();

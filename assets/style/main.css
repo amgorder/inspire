@@ -5,6 +5,18 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+.clock {
+  background-color: rgb(119, 3, 94);
+  color: rgb(3, 248, 44);
+  border: 2px solid black;
+  margin: 20px;
+  padding: 20px;
+}
+
+
+
+
 :root {
   --blue: blue;
   --indigo: indigo;
