@@ -7,20 +7,21 @@ class QuotesService {
 
     constructor() {
         this.getQuotes()
+        console.log("qs");
     }
 
 
     async getQuotes() {
         try {
-            const res = await sandboxApi.get("quote")
+            const res = await sandboxApi.get("quotes")
             ProxyState.quote = new Quote(res.data)
 
             console.log(ProxyState.quote);
         } catch (error) {
-            console.error('getQuotes Error retriving images');
+            console.error('getQuotes Error retriving quotes');
         }
     }
 
 }
 
-export const quoteService = new QuotesService();
+export const quotesService = new QuotesService();

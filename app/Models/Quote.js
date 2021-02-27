@@ -9,7 +9,8 @@ export default class Quote {
 
         return /*html*/`
         <div class="card">
-            ${this.content}
+            <h2>${this.content}</h2>
+            <h3>${this.author}</h3>
         </div>
         `
     }

@@ -1,16 +1,17 @@
 import { ProxyState } from "../AppState.js";
-import { quoteService } from "../Services/QuotesService.js";
+import { quotesService } from "../Services/QuotesService.js";
 
 
 //Private
 function _drawQuotes() {
     document.getElementById("quote").innerHTML = ProxyState.quote.Template
+    console.log(ProxyState.quote.Template);
 }
 
 //Public
 export default class QuotesController {
     constructor() {
-        ProxyState.on("quotes", _drawQuotes);
+        ProxyState.on("quote", _drawQuotes);
     }
 
 }
