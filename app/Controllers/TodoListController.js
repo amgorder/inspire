@@ -6,9 +6,8 @@ import { todoListService } from "../Services/TodoListService.js";
 function _drawTodoList() {
     let tasks = ProxyState.todoList
     let template = ""
-
     tasks.forEach(task => template += task.Template)
-    document.getElementById('current-todoList').innerHTML = template
+    document.getElementById('task').innerHTML = template
     console.log(ProxyState.todoList);
 
 }
@@ -16,7 +15,25 @@ function _drawTodoList() {
 //Public
 export default class TodoListController {
     constructor() {
+        _drawTodoList()
         ProxyState.on("todoList", _drawTodoList);
     }
 
+    createTodo(event) {
+        debugger
+        event.preventDefault();
+        let form = event.target
+        let rawTask = {
+            task: form.task.value,
+        }
+        todoListService.createTodo(rawTask)
+    }
+
+    taskComplete(id) {
+        todoListService.taskComplete(id)
+    }
+
+    removeTask(id) {
+        todoListService.removeTask(id)
+    }
 }

@@ -8,6 +8,6 @@ export const sandboxApi = axios.create({
 //This is the user API I am going to store my TODO info in (not localhost)
 // @ts-ignore
 export const todosApi = axios.create({
-    baseURL: "https://bcw-sandbox.herokuapp.com/api/Aaron/todos",
+    baseURL: "https://bcw-sandbox.herokuapp.com/api/aaron/todos",
     timeout: 3000
 })

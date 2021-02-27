@@ -1,6 +1,6 @@
 import { ProxyState } from "../AppState.js";
 import TodoList from "../Models/TodoList.js";
-import { sandboxApi } from "./AxiosService.js"
+import { sandboxApi, todosApi } from "./AxiosService.js"
 
 class TodoListService {
     constructor() {
@@ -10,7 +10,7 @@ class TodoListService {
     //GET
     async getTodoList() {
         try {
-            const res = await sandboxApi.get('todoList')
+            const res = await todosApi.get('')
             ProxyState.todoList = res.data.map(rawTodoList => new TodoList(rawTodoList))
         } catch (error) {
             console.error('getTodoList Error retriving todoList');
@@ -20,7 +20,8 @@ class TodoListService {
     //PUT
     async createTodo(rawTask) {
         try {
-            const res = await sandboxApi.post('todoList', rawTask)
+            debugger
+            const res = await todosApi.post('', rawTask)
             ProxyState.todoList = [...ProxyState.todoList, new TodoList(res.data)]
         } catch (error) {
             console.error('New Task ERROR');
@@ -32,7 +33,7 @@ class TodoListService {
         let completedTask = ProxyState.todoList.find(ct => ct.id === id)
         //apply strikethrough here? 
         try {
-            const res = await sandboxApi.put('Aaron/' + id, completedTask)
+            const res = await todosApi.put('' + id, completedTask)
             ProxyState.todoList = ProxyState.todoList
         } catch (error) {
             console.error('Completed Task ERROR')
@@ -43,7 +44,7 @@ class TodoListService {
     //REMOVE TASK
     async removeTask(id) {
         try {
-            const res = await sandboxApi.delete(`Aaron/${id}`)
+            const res = await todosApi.delete(`${id}`)
             this.getTodoList()
         } catch (error) {
             console.error('Remove Task ERROR')
