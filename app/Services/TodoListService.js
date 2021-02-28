@@ -1,6 +1,7 @@
 import { ProxyState } from "../AppState.js";
 import TodoList from "../Models/TodoList.js";
-import { sandboxApi, todosApi } from "./AxiosService.js"
+import { sandboxApi } from "./AxiosService.js"
+
 
 class TodoListService {
     constructor() {
@@ -10,22 +11,23 @@ class TodoListService {
     //GET
     async getTodoList() {
         try {
-            const res = await todosApi.get('')
-            ProxyState.todoList = res.data.map(rawTodoList => new TodoList(rawTodoList))
+            const res = await sandboxApi.get('gorder/todos')
+            ProxyState.todoList = res.data.map(rawTodo => new TodoList(rawTodo))
         } catch (error) {
-            console.error('getTodoList Error retriving todoList');
+            console.error(error);
         }
     }
 
     //PUT
     async createTodo(rawTask) {
         try {
-            debugger
-            const res = await todosApi.post('', rawTask)
-            ProxyState.todoList = [...ProxyState.todoList, new TodoList(res.data)]
+            const res = await sandboxApi.post('gorder/todos', rawTask)
+            this.getTodoList();
+            console.log(res);
         } catch (error) {
-            console.error('New Task ERROR');
+            console.error(error);
         }
+
     }
 
     //STRIKETHOUGH
@@ -33,7 +35,7 @@ class TodoListService {
         let completedTask = ProxyState.todoList.find(ct => ct.id === id)
         //apply strikethrough here? 
         try {
-            const res = await todosApi.put('' + id, completedTask)
+            const res = await sandboxApi.put('' + id, completedTask)
             ProxyState.todoList = ProxyState.todoList
         } catch (error) {
             console.error('Completed Task ERROR')
@@ -44,7 +46,7 @@ class TodoListService {
     //REMOVE TASK
     async removeTask(id) {
         try {
-            const res = await todosApi.delete(`${id}`)
+            const res = await sandboxApi.delete('' + id)
             this.getTodoList()
         } catch (error) {
             console.error('Remove Task ERROR')

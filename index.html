@@ -29,22 +29,39 @@
         </div>
 
         <div class="row">
-            <div id="tasks" class="col clock">
+            <div class="col clock">
 
                 <h1>Need to do something?</h1>
-                <form class="form-inline" onsubmit="app.todoListController.createTodo(event)">
-                    <div class="form-group">
-                        <input type="text" name="task" id="task" class="form-control" placeholder="New Todo here..."
+                <div>
+
+                    <form class="form-inline" onsubmit="app.todoListController.createTodo(event)">
+
+                        <input type="text" name="task" class="form-control" placeholder="New Todo here..."
                             aria-describedby="helpId">
-                    </div>
-                    <button class="btn btn-info" type="submit">Ship it!</button>
-                    <div class="" id=""></div>
-                </form>
+
+                        <button class="btn btn-info" type="submit">Ship it!</button>
+                    </form>
+
+                </div>
+            </div>
+            <div class="" id="todo">
             </div>
         </div>
 
 
+        <div class="row">
+            <div class="col clock">
 
+                <form class="form-inline" onsubmit="app.taskController.createTask(event)">
+                    <input type="text" name="rawpizza" class="form-control" placeholder="Create New Task To Do..."
+                        aria-describedby="helpId">
+                    <button class="btn btn-info" type="submit">ADD</button>
+                </form>
+
+                <div id="item"></div>
+
+            </div>
+        </div>
 
 
 

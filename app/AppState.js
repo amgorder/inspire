@@ -3,15 +3,16 @@ import { isValidProp } from "./Utils/isValidProp.js"
 import Weather from "./Models/Weather.js"
 import Quote from "./Models/Quote.js"
 import TodoList from "./Models/TodoList.js"
+import Task from "./Models/Task.js"
 
 
 
 class AppState extends EventEmitter {
   backgroundImages = ""
-
-  /** @type {TodoList[]} */
+  /**@type {TodoList[]} */
   todoList = []
-
+  /**@type {Task[]} */
+  task = []
   weather = null
   quote = null
   clock = ""

@@ -1,22 +1,19 @@
 export default class TodoList {
-    constructor({ task, completed, id }) {
-        this.task = task
-        this.completed = completed
-        this.id = id
+    constructor(data) {
+        this.task = data.task
+        this.id = data.id || data._id
     }
 
     get Template() {
 
         return /*html*/ `
-        <div class="card">
-        <i class="fa fa-trash fa-2x text-danger d-flex align-self-end pointer"
-            onclick="app.todoListController.deleteTask('${this.id}')" aria-hidden="true"></i>
-
+        <div class="col-6">
+        <div class="form-check">
+        <label class="form-check-label m-2"
         <div class="card-body">
             <h4 class="card-title">${this.task}</h4>
 
-            <button class="btn btn-info pointer" onclick="app.todoListController.complete('${this.id}')">strike
-                through ${this.task}</button>
+        </div>
         </div>
     </div>
         `

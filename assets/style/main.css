@@ -7,12 +7,12 @@
  */
 
 .clock {
-  background-color: rgb(119, 3, 94);
-  color: rgb(3, 248, 44);
-  border: 2px solid black;
+  background-color: #131a13;
+  color: rgb(219, 219, 223);
+  border: 2px solid rgb(138, 137, 137);
   margin: 20px;
   padding: 20px;
-  box-shadow: #004d00;
+  box-shadow: #212221;
   border-radius: 2%;
 }
 

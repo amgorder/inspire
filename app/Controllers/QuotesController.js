@@ -5,7 +5,6 @@ import { quotesService } from "../Services/QuotesService.js";
 //Private
 function _drawQuotes() {
     document.getElementById("quote").innerHTML = ProxyState.quote.Template
-    console.log(ProxyState.quote.Template);
 }
 
 //Public

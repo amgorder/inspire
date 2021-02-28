@@ -3,13 +3,9 @@ import Weather from "../Models/Weather.js";
 import { sandboxApi } from "./AxiosService.js"
 
 class WeatherService {
-
-
   constructor() {
     this.getWeather()
   }
-
-
 
   async getWeather() {
     try {
@@ -22,7 +18,6 @@ class WeatherService {
 
   fahrenheit() {
     let fahrenheit = (((ProxyState.weather.temp - 273.15) * 1.8) + 32);
-    console.log(fahrenheit);
   }
 }
 
