@@ -6,6 +6,6 @@ export const sandboxApi = axios.create({
 
 // @ts-ignore
 export const todoApi = axios.create({
-    baseURL: "https://bcw-sandbox.herokuapp.com/api/gorder/todo/",
+    baseURL: "https://bcw-sandbox.herokuapp.com/api/gorder/todos/",
     timeout: 3000
 })
