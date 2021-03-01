@@ -20,17 +20,16 @@ export default class TodoListController {
         event.preventDefault();
         let form = event.target
         let rawTask = {
-            task: form.task.value,
+            description: form.task.value,
         }
         todoListService.createTodo(rawTask)
         console.log(ProxyState.todoList);
     }
 
-    taskComplete(id) {
-        todoListService.taskComplete(id)
-    }
 
+    //how do I pass the right ID
     removeTask(id) {
+        console.log(id);
         todoListService.removeTask(id)
     }
 }
