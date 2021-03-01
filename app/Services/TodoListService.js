@@ -11,7 +11,9 @@ class TodoListService {
     //GET
     async getTodoList() {
         try {
-            const res = await sandboxApi.get('gorder/todos')
+            debugger
+
+            const res = await sandboxApi.get('gorder/todos/')
             console.log(res);
             ProxyState.todoList = res.data.map(t => new TodoList(t))
 
@@ -23,7 +25,7 @@ class TodoListService {
     //PUT
     async createTodo(rawTask) {
         try {
-            const res = await sandboxApi.post('gorder/todos', rawTask)
+            const res = await sandboxApi.post('gorder/todos/', rawTask)
             ProxyState.todoList = [...ProxyState.todoList, new TodoList(res.data)]
             console.log(res);
         } catch (error) {

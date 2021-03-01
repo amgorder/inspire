@@ -7,19 +7,13 @@ export default class Weather {
         this.name = data.name
     }
 
-    Temp() {
-
-        let fahrenheit = Math.floor(((this.temp - 273.15) * 1.8) + 32);
-        this.temp = fahrenheit
-    }
-
     //http://openweathermap.org/img/wn/10d@2x.png
     //replace 10d with this.icon for weather icons
     get Template() {
 
         return /*html*/`
-        <div class="text-light">
-           <p>In ${this.name} the temp. is ${this.temp} and there is ${this.weather} outside.</p> 
+        <div class="text-secondary">
+           <p>In ${this.name} the temp. is ${this.temp} F and there is ${this.weather} outside.</p> 
            <img src="http://openweathermap.org/img/wn/${this.icon}@2x.png" alt="">
         </div>
         `

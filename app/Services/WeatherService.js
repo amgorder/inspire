@@ -12,7 +12,9 @@ class WeatherService {
     try {
       const res = await sandboxApi.get("weather")
       console.log(res);
+      res.data.main.temp = Math.floor(((res.data.main.temp - 273.15) * 1.8) + 32);
 
+      console.log(res.data.main.temp);
       ProxyState.weather = new Weather(res.data)
 
     } catch (error) {
