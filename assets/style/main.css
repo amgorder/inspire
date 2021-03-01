@@ -8,12 +8,36 @@
 
 .clock {
   background-color: #131a13;
-  color: rgb(219, 219, 223);
+  color: rgb(243, 117, 14);
   border: 2px solid rgb(138, 137, 137);
   margin: 20px;
   padding: 20px;
   box-shadow: #212221;
-  border-radius: 2%;
+  border-radius: 4%;
+}
+.o{
+  opacity: 0.3;
+}
+.sticky-top{
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.c{
+  color: #fd7c04;
+}
+
+.navbar{
+  overflow: hidden;
+  background-color:darkslategray
+}
+
+.t{
+  text-decoration: line-through;
+}
+
+.h1{
+  text-shadow: #fd7c04;
 }
 
 .quote{

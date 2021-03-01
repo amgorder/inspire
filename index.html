@@ -13,56 +13,33 @@
 
 <body>
     <header>
-
+        <nav class="navbar navbar-dark sticky-top bg-dark justify-content-between">
+            <a class="navbar-brand"><span class="c" id="clock"></span></a>
+            <form class="form-inline" onsubmit="app.todoListController.createTodo(event)">
+                <input type="text" name="task" class="form-control" placeholder="New Todo here..."
+                    aria-describedby="helpId">
+                <button class="btn btn-dark" type="submit">Full Send</button>
+            </form>
+        </nav>
     </header>
     <main class="container-fluid">
         <div class="row">
-            <div id="clock" class="col clock">
-
-            </div>
-            <div id="current-weather" class="col clock highlight">
-
-            </div>
-            <div id="quote" class="col clock">
-
-            </div>
+            <div id="current-weather" class="col-3"></div>
         </div>
 
         <div class="row">
-            <div class="col clock">
-
-                <h1>Need to do something?</h1>
-                <div>
-                    <form class="form-inline" onsubmit="app.todoListController.createTodo(event)">
-                        <input type="text" name="task" class="form-control" placeholder="New Todo here..."
-                            aria-describedby="helpId">
-                        <button class="btn btn-info" type="submit">Ship it!</button>
-                    </form>
-                    <div class="" id="todo">
-
-
-
-                    </div>
-
-
+            <div class="col-6">
+                <div class="" id="todo">
 
                 </div>
             </div>
         </div>
-        </div>
-
-
-
-
-
-
-
-
     </main>
-    <footer>
-
-
-
+    <footer class="container-fluid">
+        <div class="row">
+            <div class="col-2"></div>
+            <div id="quote" class="col-8mt-5 h1"></div>
+        </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="

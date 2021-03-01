@@ -9,8 +9,8 @@ export default class Quote {
 
         return /*html*/`
         <div class="wrap">
-        <h4 class="mb-2 text-light quote text-shadow" >${this.content}</h4>
-        <h5 class="m-3 author"> ${this.author}</h5>
+        <h4 class="mb-2 text-dark quote" >${this.content}</h4>
+        <h5 class="m-3 author c"> ${this.author}</h5>
         </div>
         `
     }
