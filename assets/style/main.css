@@ -16,7 +16,24 @@
   border-radius: 2%;
 }
 
+.quote{
+  opacity: 1;
+}
 
+.author {
+  opacity: 0;
+}
+
+.quote, .author{
+  transition: opacity 0.5s linear;
+}
+
+.wrap:hover .quote {
+  opacity: 0;
+}
+.wrap:hover .author {
+  opacity: 1;
+}
 
 
 :root {

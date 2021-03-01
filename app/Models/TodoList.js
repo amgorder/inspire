@@ -1,21 +1,21 @@
 export default class TodoList {
     constructor(data) {
-        this.task = data.task
-        this.id = data.id || data._id
+        this.id = data.id || data._id;
+        this.task = data.task;
+        this.count = data.count || 0;
+        //true / false
+        this.finished = data.finished || false;
     }
 
     get Template() {
 
         return /*html*/ `
-        <div class="col-6">
-        <div class="form-check">
-        <label class="form-check-label m-2"
-        <div class="card-body">
-            <h4 class="card-title">${this.task}</h4>
+        
+        <form class="form-inline" onsubmit="app.todoListController.completeTask('${this.id}')">
+            <h4>${this.task}</h4>
+            <button class="btn btn-info" type="submit">Complete</button>
+        </form>
 
-        </div>
-        </div>
-    </div>
         `
 
     }

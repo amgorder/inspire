@@ -19,4 +19,12 @@ export default class Weather {
         </div>
         `
     }
+    get Temp() {
+
+        let fahrenheit = Math.floor(((this.temp - 273.15) * 1.8) + 32);
+        this.temp = fahrenheit
+    }
+
+
+
 }

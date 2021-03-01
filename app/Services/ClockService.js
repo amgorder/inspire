@@ -6,11 +6,23 @@ class ClockService {
     }
 
     setClock() {
-
-        //clock is in millitary time and doesn't have a :00 minutes structure
         let date = new Date()
-        ProxyState.clock = date.getHours() + ":" + date.getMinutes()
+        let h = date.getHours();
+        let m = date.getMinutes();
+        let session = "AM"
+        if (h == 0) {
+            h = 12;
+        }
 
+        if (h > 12) {
+            h = h - 12;
+            session = "PM";
+        }
+
+
+        let min = (m < 10) ? "0" + m : m;
+        let time = h + ":" + min + session;
+        ProxyState.clock = time
     }
 }
 

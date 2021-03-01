@@ -8,9 +8,9 @@ export default class Quote {
     get Template() {
 
         return /*html*/`
-        <div>
-            <h5>${this.content}</h5>
-            <h5>${this.author}</h5>
+        <div class="wrap">
+        <h4 class="mb-2 text-light quote text-shadow" >${this.content}</h4>
+        <h5 class="m-3 author"> ${this.author}</h5>
         </div>
         `
     }

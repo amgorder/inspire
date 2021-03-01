@@ -12,7 +12,9 @@ class TodoListService {
     async getTodoList() {
         try {
             const res = await sandboxApi.get('gorder/todos')
-            ProxyState.todoList = res.data.map(rawTodo => new TodoList(rawTodo))
+            console.log(res);
+            ProxyState.todoList = res.data.map(t => new TodoList(t))
+
         } catch (error) {
             console.error(error);
         }
@@ -22,7 +24,7 @@ class TodoListService {
     async createTodo(rawTask) {
         try {
             const res = await sandboxApi.post('gorder/todos', rawTask)
-            this.getTodoList();
+            ProxyState.todoList = [...ProxyState.todoList, new TodoList(res.data)]
             console.log(res);
         } catch (error) {
             console.error(error);
@@ -33,10 +35,16 @@ class TodoListService {
     //STRIKETHOUGH
     async taskComplete(id) {
         let completedTask = ProxyState.todoList.find(ct => ct.id === id)
-        //apply strikethrough here? 
+
+        // true false chech to verify completion
+        if (completedTask.finished == false) {
+            completedTask.finished = true
+        } else {
+            completedTask.finished = false
+        }
         try {
             const res = await sandboxApi.put('' + id, completedTask)
-            ProxyState.todoList = ProxyState.todoList
+            this.getTodoList
         } catch (error) {
             console.error('Completed Task ERROR')
 
@@ -52,9 +60,6 @@ class TodoListService {
             console.error('Remove Task ERROR')
         }
     }
-
-
-
 }
 
 export const todoListService = new TodoListService();
