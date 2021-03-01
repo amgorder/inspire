@@ -11,7 +11,7 @@ class TodoListService {
     //GET
     async getTodoList() {
         try {
-            debugger
+
 
             const res = await sandboxApi.get('gorder/todos/')
             console.log(res);
