@@ -28,7 +28,8 @@ export default class TodoListController {
 
 
     //how do I pass the right ID
-    removeTask(id) {
+    removeTask(event, id) {
+        event.preventDefault()
         console.log(id);
         todoListService.removeTask(id)
     }

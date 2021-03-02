@@ -8,7 +8,7 @@ export default class TodoList {
 
         return /*html*/ `
         <div class="card">
-        <form class="form-inline" onsubmit="app.todoListController.removeTask('${this.id}')">
+        <form class="form-inline" onsubmit="app.todoListController.removeTask(event, '${this.id}')">
             <h4>${this.description}</h4>
             <button class="btn btn-danger" type="submit">Delete</button>
         </form>

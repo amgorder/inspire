@@ -31,8 +31,8 @@ class TodoListService {
     //REMOVE TASK
     async removeTask(id) {
         try {
-            // const res = await sandboxApi.delete(`gorder/todos/`)
-            // this.getTodoList()
+            const res = await sandboxApi.delete(`gorder/todos/` + id)
+            this.getTodoList()
             ProxyState.todoList = ProxyState.todoList.filter(td => td.id != id)
         } catch (error) {
             console.error('Remove Task ERROR')
